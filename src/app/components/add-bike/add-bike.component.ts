@@ -14,7 +14,8 @@ import { error } from '@angular/compiler/src/util';
 export class AddBikeComponent implements OnInit {
   bikeForm! :FormGroup;
   validateMessage :String ="";
-  username:string = "bhatindm";
+  successMessage : String = "";
+  username:string = "";
 
   constructor(private bikeService:BikeService,private userService:UserService) {
     this.username = this.userService.getUsername();
@@ -36,7 +37,7 @@ export class AddBikeComponent implements OnInit {
   }
   submitBikeRegistration(){
     if(this.bikeForm.valid){
-      this.validateMessage = "saved";
+      this.successMessage = "saved";
       this.bikeService.createBikeRegistration(this.bikeForm.value).subscribe(
         data => {
           this.bikeForm.reset();

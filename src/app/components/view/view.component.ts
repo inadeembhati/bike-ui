@@ -35,6 +35,9 @@ export class ViewComponent implements OnInit {
   onBack(){
     this.router.navigate(['/viewAll']);
   }
+  onEdit(){
+    this.router.navigate(['/editBike']);
+  }
   deleteById(){
     this.bikeService.deleteById(this.bike.id).subscribe(
       data => {

@@ -9,7 +9,8 @@ const httpOptions  ={
   providedIn: 'root'
 })
 export class BikeService {
-  private serviceUrl= 'http://localhost:8080/api/v1/bikes/';
+  private localhost = 'http://localhost:8080';
+  private serviceUrl= this.localhost+'/api/v1/bikes/';
   constructor(private http : HttpClient) { }
   getBikesByEmail(email:any){
     console.log(this.serviceUrl+'email/'+email);
@@ -29,5 +30,9 @@ export class BikeService {
   }
   deleteById(id:any){
     return this.http.delete(this.serviceUrl+id);
+  }
+  updateBike(bike:any,id:any){
+    let body = JSON.stringify(bike);
+    return this.http.put(this.serviceUrl+'edit/'+id,body,httpOptions);
   }
 }

@@ -1,0 +1,48 @@
+<div class="container">
+    Edit Bike Details
+    <form [formGroup]="bikeForm" (ngSubmit)="updateBike()" novalidate>
+        <div class = "form-group">
+            <label>Buyer Name</label>
+            <input type="text" formControlName="buyerName" class="form-control" [(ngModel)]='buyerName' required autofocus>
+        </div>
+        <div class = "form-group">
+            <label>Email</label>
+            <input type="text" formControlName="email" class="form-control" [(ngModel)]='email' readonly required autofocus>
+        </div>
+        <div class = "form-group">
+            <label>Phone</label>
+            <input type="text" formControlName="phone" class="form-control" [(ngModel)]='phone' required autofocus>
+        </div>
+        <div class = "form-group">
+            <label>Model</label>
+            <input type="text" formControlName="model" class="form-control" [(ngModel)]='model' required autofocus>
+        </div>
+        <div class = "form-group">
+            <label>Serial Number</label>
+            <input type="text" formControlName="serialNumber" class="form-control" [(ngModel)]='serialNumber' readonly required autofocus>
+        </div>
+        <div class = "form-group">
+            <label>Price</label>
+            <input type="text" formControlName="price" class="form-control" [(ngModel)]='price' required autofocus>
+        </div>
+        
+        <div class = "form-group">
+            <label>Purchase Date</label>
+            <input type="text"  formControlName="purchaseDate" class="form-control"[(ngModel)]='purchaseDate' readonly required autofocus>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-outline-primary"> Update</button>
+            <button type="button" class="btn btn-outline-secondary"><a [routerLink] = "['/view', bike.id]" > Back </a></button>
+        </div>
+    </form>
+    <div  class="alert alert-danger" *ngIf="validateMessage != '' " >
+        <h6>
+            {{validateMessage}}
+        </h6>
+    </div>
+    <div  class="alert alert-success" *ngIf="successMessage != '' " >
+        <h6>
+            {{successMessage}}
+        </h6>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+import { EditBikeComponent } from './components/edit-bike/edit-bike.component';
 import { ViewComponent } from './components/view/view.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: "admin",
     component : AdminComponent
+  },
+  {
+    path: "editBike/:id",
+    component : EditBikeComponent
   },
   {
     path:"",

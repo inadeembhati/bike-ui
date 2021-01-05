@@ -15,6 +15,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { LogoutComponent } from './components/logout/logout.component';
+import { EditBikeComponent } from './components/edit-bike/edit-bike.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     LoginComponent,
     ViewComponent,
     AdminComponent,
-    LogoutComponent
+    LogoutComponent,
+    EditBikeComponent
   ],
   imports: [
     BrowserModule,

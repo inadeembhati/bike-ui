@@ -39,7 +39,7 @@
 </table>
     <div class="align-content-center">
       <button class="btn btn-outline-secondary" (click) =  'onBack()'> Back </button> 
-      <button class="btn btn-outline-secondary" (click) =  'onBack()'> Edit</button>    
+      <button class="btn btn-outline-secondary" [routerLink] = "['/editBike', bike.id]"> Edit</button>    
       <button class="btn btn-danger" (click) = 'deleteById()' >Delete </button>
   </div>
 

@@ -11,7 +11,8 @@ const httpOptions  ={
 })
 export class UserService {
   private loggedinStatus  =  JSON.parse(localStorage.getItem('loggedin') || 'false'); 
-  private serviceUrl= 'http://localhost:8080/api/v1/user';
+  private localhost = 'http://localhost:8080';
+  private serviceUrl= this.localhost+'/api/v1/user';
   constructor(private http:HttpClient) { }
 
   userRegister(registerBody:any){
@@ -39,7 +40,7 @@ export class UserService {
    localStorage.setItem('userType',userType); 
   }
   getUsername() {
-    return JSON.stringify(localStorage.getItem('username') || '{}');
+    return JSON.stringify(localStorage.getItem('username') || '');
   }
   getUserType(){
     
