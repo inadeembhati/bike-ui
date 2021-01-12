@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value['email']);
     this.userService.login(this.loginForm.value).subscribe(
       data=> {
-            if(data == "ROLE_ADMIN"){
+            if((<any>data).roles[0] == "ROLE_ADMIN"){
             this.userService.setUserData('true',this.loginForm.value['email'],'admin');
           }else{
             this.userService.setUserData('true',this.loginForm.value['email'],'normal');
