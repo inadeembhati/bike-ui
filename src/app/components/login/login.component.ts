@@ -11,6 +11,7 @@ import { ifStmt } from '@angular/compiler/src/output/output_ast';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
   loginForm! : FormGroup;
   validateMessage:String = "";
@@ -34,9 +35,7 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value['email']);
     this.userService.login(this.loginForm.value).subscribe(
       data=> {
-              var json = JSON.stringify(data);
-              console.log(json);
-            if(data.roles[0] == "ROLE_ADMIN"){
+            if(data == "ROLE_ADMIN"){
             this.userService.setUserData('true',this.loginForm.value['email'],'admin');
           }else{
             this.userService.setUserData('true',this.loginForm.value['email'],'normal');

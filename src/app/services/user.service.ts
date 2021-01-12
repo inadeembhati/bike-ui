@@ -26,7 +26,7 @@ export class UserService {
   }
   login(userBody:any){
     let body = JSON.stringify(userBody);
-    return this.http.post(this.serviceUrl+'/signin',body,httpOptions); 
+    return this.http.post<String>(this.serviceUrl+'/signin',body,httpOptions); 
   }
   logout(){
     localStorage.removeItem('loggedin');
