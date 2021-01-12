@@ -17,7 +17,7 @@ export class UserService {
 
   userRegister(registerBody:any){
     let body = JSON.stringify(registerBody);
-    return this.http.post(this.serviceUrl+'/register/',body,httpOptions);
+    return this.http.post(this.serviceUrl+'/register',body,httpOptions);
   }
   
   getUserByEmail(email:string){
