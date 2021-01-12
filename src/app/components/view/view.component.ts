@@ -41,13 +41,13 @@ export class ViewComponent implements OnInit {
   deleteById(){
     this.bikeService.deleteById(this.bike.id).subscribe(
       data => {
-        console.log(data);
-        this.onBack();
+        console.log("content deleted");
+        
       },
       error=> {
         console.error(error);
       }
     );
-
+    this.onBack();
   }
 }

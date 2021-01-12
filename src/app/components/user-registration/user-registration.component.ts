@@ -28,7 +28,7 @@ export class UserRegistrationComponent implements OnInit {
       lastName  : new FormControl('',Validators.required),
       email  : new FormControl('',Validators.required),
       password  : new FormControl('',Validators.required),
-      dob  : new FormControl('',Validators.required)
+      dateOfBirth  : new FormControl('',Validators.required)
     });
   }
   onUserRegistrationSubmit(){
@@ -37,6 +37,7 @@ export class UserRegistrationComponent implements OnInit {
     
       this.userService.userRegister(this.userForm.value).subscribe(
         data => {
+          console.log(data);
           if(data == false){
             this.validateMessage = "Email address already in use";
        } 

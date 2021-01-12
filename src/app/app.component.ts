@@ -2,6 +2,10 @@ import { UserService } from './services/user.service';
 import { NavigationEnd, Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { ThrowStmt } from '@angular/compiler';
+import { isDevMode } from '@angular/core';
+import {enableProdMode} from '@angular/core';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-root',
@@ -16,7 +20,11 @@ export class AppComponent {
   username!:string;
   
   constructor(private route: Router, private userService:UserService) {
-    this.getUserData();
+    this.getUserData(); 
+    if(environment.production){
+      enableProdMode();
+    }
+    
   }
   getUserData(){
     this.loggedInStatus= this.userService.getLoginStatus() ;

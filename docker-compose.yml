@@ -4,14 +4,7 @@ services:
     image: spring-boot-bike:v1
     ports: 
       - 8080:8080
-    networks:
-      - backend-net
   bikefrontend:
     image: bike-ui:v1
     ports: 
       - 4200:80
-    networks:
-      - backend-net
-networks:
-  backend-net:
-    driver: bridge

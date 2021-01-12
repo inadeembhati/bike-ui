@@ -17,7 +17,7 @@ export class UserService {
 
   userRegister(registerBody:any){
     let body = JSON.stringify(registerBody);
-    return this.http.post<boolean>(this.serviceUrl+'/register/',body,httpOptions);
+    return this.http.post(this.serviceUrl+'/register/',body,httpOptions);
   }
   
   getUserByEmail(email:string){
@@ -26,7 +26,7 @@ export class UserService {
   }
   login(userBody:any){
     let body = JSON.stringify(userBody);
-    return this.http.post<Boolean>(this.serviceUrl+'/login',body,httpOptions); 
+    return this.http.post(this.serviceUrl+'/signin',body,httpOptions); 
   }
   logout(){
     localStorage.removeItem('loggedin');

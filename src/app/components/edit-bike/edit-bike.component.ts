@@ -45,6 +45,7 @@ export class EditBikeComponent implements OnInit {
   }
   
   setData(){
+  console.log(this.bike);
   this.email  = this.bike.email;
   this.buyerName  = this.bike.buyerName;
   this.phone= this.bike.phone;
